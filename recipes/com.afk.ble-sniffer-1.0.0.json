@@ -34,12 +34,13 @@
         },
         "Run": {
           "RequiresPrivilege": true,
-          "script": "python3 -u {artifacts:decompressedPath}/com.afk.ble-sniffer/1.0.0/sniffer.py '{configuration:/InferenceInterval}'"
+          "script": "python3 -u {artifacts:decompressedPath}/2/sniffer.py '{configuration:/InferenceInterval}'"
         }
       },
       "Artifacts": [
         {
-          "Uri": "s3://root-260030673750/584af730-2854-4a77-8f3b-ca1696401e08/gg-artifacts/com.afk.ble-sniffer.zip"
+          "Uri": "s3://root-260030673750/584af730-2854-4a77-8f3b-ca1696401e08/gg-artifacts/2.zip",
+          "Unarchive": "ZIP"
         }
       ]
     }
