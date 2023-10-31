@@ -9,6 +9,7 @@ Target Type = Devices
 Target = Your device name
 Components: aws.greengrass.cli ticked, version 2.11.0
 
+```
 sudo /greengrass/v2/bin/greengrass-cli deployment create \
 --recipeDir ./recipes \
 --artifactDir ./artifacts \
@@ -20,7 +21,7 @@ sudo /greengrass/v2/bin/greengrass-cli component restart --names "com.afk.ble_sn
 
 # To remove
 sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.afk.ble_sniffer"
-
+```
 
 
 # Upload directions
@@ -29,13 +30,21 @@ sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.afk.ble_s
 
 1. Click on `Components`
 
-1 . Go to artifacts folder and compress com.afk.ble-sniffer folder to `.zip`, upload the zip as the artefact.
+1 . Compress contents of artifacts/com.afk.ble-sniffer/1.0.0/ to `.zip`, upload the zip as the artefact, note the name of the zip
 
 1. Open up the .json inside recipes/
-Scroll to Artifacts and look at the URIs
 
 1. Go back to the website, there should be an upload list to the right, preceeding each artifact there is a little icon that copies the URI link,
 update the URI link for each artifact in the json.
+
+1. Update script paths where an executible is mentioned, for example
+   ```
+   "Run": {
+          "RequiresPrivilege": true,
+          "script": "python3 -u {artifacts:decompressedPath}/<NAME OF ZIP>/sniffer.py '{configuration:/InferenceInterval}'"
+        }
+   ```
+   Replace `<NAME OF ZIP>` with the name of the zip you uploaded (without the extension)
 
 1. Once done, upload the recipe and click save.
 
