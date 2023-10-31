@@ -29,7 +29,7 @@ sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.afk.ble_s
 
 1. Click on `Components`
 
-1. Upload each item inside artifacts/com.afk.ble_sniffer/1.0.0/ under the artifacts tab.
+1 . Go to artifacts folder and compress com.afk.ble-sniffer folder to `.zip`, upload the zip as the artefact.
 
 1. Open up the .json inside recipes/
 Scroll to Artifacts and look at the URIs
@@ -37,7 +37,7 @@ Scroll to Artifacts and look at the URIs
 1. Go back to the website, there should be an upload list to the right, preceeding each artifact there is a little icon that copies the URI link,
 update the URI link for each artifact in the json.
 
-1. ArtifactsOnce done, upload the recipe and click save.
+1. Once done, upload the recipe and click save.
 
 # To create firmware for deployment
 
